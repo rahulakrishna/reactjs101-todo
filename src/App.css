@@ -1,0 +1,27 @@
+.app{
+    padding: 100px;
+}
+
+.todo{
+  padding: 5px;
+  box-shadow: 0 0 0.5px 0 grey;
+  margin:10px;
+}
+
+.todo:hover{
+  background: grey;
+  transition: all 0.5s;
+  color: white;
+  cursor: pointer;
+}
+
+.completed{
+  text-decoration: line-through;
+}
+
+.add-todo-input{
+  width: 100%;
+  font-size: 24px;
+  margin:10px;
+  padding: 5px;
+}
