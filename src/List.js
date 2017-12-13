@@ -2,7 +2,7 @@ import React from 'react'
 
 class List extends React.Component {
   render(){
-    console.log(this.props)
+    // We map through the completed and pending array and render a series of components and store it to a variable.
     const completed=this.props.completed.map((todo)=>(
       <div key={todo.id} className='todo completed' onClick={()=>{this.props.review(todo.id,todo.text)}}>
         {todo.id}. {todo.text}
@@ -16,6 +16,7 @@ class List extends React.Component {
     return(
       <div>
         <h4>Completed</h4>
+        {/* variable completed that we defined before. */}
         {completed}
         <h4>Pending</h4>
         {pending}

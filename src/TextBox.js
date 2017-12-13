@@ -19,7 +19,7 @@ class TextBox extends React.Component {
     return(
       <div>
         <form onSubmit={(e)=>{
-          e.preventDefault()
+          e.preventDefault() //To prevent the form from refreshing the page.
           this.addTodo()
         }}>
           <input
@@ -27,7 +27,7 @@ class TextBox extends React.Component {
             className='add-todo-input'
             placeholder='Add Todo'
             onChange={(e)=>{
-              console.log(e.target.value)
+              // We update the state every time a change occurs.
               this.changeText(e.target.value)
             }}
             value={this.state.text}

@@ -31,15 +31,15 @@ class App extends Component {
         text:'Booting up'
       }
     ],
-    currentId:5
+    currentId:5 // Needed when we add a task.
   }
   addTodo=(text)=>{
     // Function to Add a Todo
     this.setState({
-      currentId:this.state.currentId+1
+      currentId:this.state.currentId+1 // Increments the currentId
     },()=>{
       this.setState({
-        pending:this.state.pending.concat({id:this.state.currentId,text:text})
+        pending:this.state.pending.concat({id:this.state.currentId,text:text}) //Concats the new task to the pending tasks.
       })
     })
   }
@@ -47,11 +47,12 @@ class App extends Component {
     // Function to complete a Todo
     console.log(id,text)
     this.setState({
-      completed:this.state.completed.concat({id,text}),
-      pending:this.state.pending.filter((todo)=>todo.id!==id)
+      completed:this.state.completed.concat({id,text}), //Adds the task to completed
+      pending:this.state.pending.filter((todo)=>todo.id!==id) //Filters away the task from pending tasks
     })
   }
   review=(id,text)=>{
+    // Opposite of the above function.
     this.setState({
       pending:this.state.pending.concat({id,text}),
       completed:this.state.completed.filter((todo)=>todo.id!==id)
